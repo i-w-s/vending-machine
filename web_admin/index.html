@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Управление автоматом</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .card {
+      border: 1px solid #e0e4e8;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+      background: #fdfdff;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    .status {
+      font-weight: bold;
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛒 Панель управления автоматом</h1>
+
+    <div class="card">
+      <h3>Статус</h3>
+      <p>Состояние: <span class="status" id="status">Подключение...</span></p>
+    </div>
+
+    <div class="card">
+      <h3>Остатки товаров</h3>
+      <ul id="stock">
+        <li>Товар 1: 5 шт</li>
+        <li>Товар 2: 3 шт</li>
+        <li>Товар 3: 0 шт</li>
+        <li>Товар 4: 7 шт</li>
+        <li>Товар 5: 4 шт</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Цены</h3>
+      <p>Товар 1: 50 руб</p>
+      <p>Товар 2: 60 руб</p>
+      <p>Товар 3: 40 руб</p>
+      <p>Товар 4: 70 руб</p>
+      <p>Товар 5: 55 руб</p>
+    </div>
+
+    <button onclick="reboot()">Перезагрузить автомат</button>
+  </div>
+
+  <script>
+    // Здесь будет MQTT или HTTP-обновление
+    document.getElementById("status").textContent = "Онлайн";
+    
+    function reboot() {
+      alert("Команда 'Перезагрузить' отправлена");
+      // Здесь: client.publish("vending/cmd", "reboot");
+    }
+  </script>
+</body>
+</html>
