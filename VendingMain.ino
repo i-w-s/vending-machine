@@ -1,4 +1,3 @@
-Александр, [14.08.2025 13:17]
 /**
  * 🛒 Вендинговый автомат — Основная прошивка
  * Arduino Uno | LCD 16x2 | 5 товаров | Кнопки | Двигатели
@@ -160,7 +159,6 @@ void dispenseProduct(int idx) {
 void handleServiceMode() {
   if (digitalRead(6) == LOW) { editIndex = (editIndex - 1 + 5) % 5; tempPrice = prices[editIndex]; delay(200); }
 
-Александр, [14.08.2025 13:17]
 if (digitalRead(7) == LOW) { editIndex = (editIndex + 1) % 5; tempPrice = prices[editIndex]; delay(200); }
   if (digitalRead(8) == LOW) { tempPrice++; delay(100); }
   if (digitalRead(9) == LOW) { tempPrice = max(0, tempPrice - 1); delay(100); }
@@ -188,4 +186,5 @@ void resetToMain() {
   lcd.clear();
   lcd.print("Выберите товар:");
   selectedProduct = -1;
+
 }
